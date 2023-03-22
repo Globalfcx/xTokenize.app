@@ -44,6 +44,7 @@ Working Prototype is available here:
 
 https://xd.adobe.com/view/45963ae0-bcae-4b7c-9da2-c1db54405520-10c5/?fullscreen
 
+
 Virtual Model Deployment: https://spinning-planet-eight.vercel.app/
 
 Nagivation on the site:
