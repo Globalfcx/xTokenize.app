@@ -1,0 +1,456 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+/* temp */
+.next-point {
+  width: 150px;
+  height: 50px;
+  color: white;
+  position: absolute;
+  z-index: 100;
+  color: black;
+  cursor: pointer;
+}
+
+.intro-screen {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: rgba(0, 0, 0, 1); */
+  z-index: 100;
+}
+
+.loading-bar {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: #00a0e3;
+  transform: scaleX(0.3);
+  transform-origin: top left;
+  transition: transform 0.5s;
+}
+
+.loading-bar.ended {
+  transform: scaleX(0);
+  transform-origin: 100% 0;
+  transition: transform 1.5s ease-in-out;
+}
+
+.popup-wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  /* display: flex; */
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+/* popup */
+.popup {
+  position: relative;
+  width: 30vw;
+  height: 50vw;
+  /* background-image: url('./../static/images/japan.png'); */
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.enter-button {
+  position: relative;
+  background-image: url("./../static/enter-button-normal.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: background-image 0.2s;
+}
+
+.enter-button:hover {
+  background-image: url("./../static/enter-button-hover.png");
+}
+
+/* japan */
+.enter-button-japan {
+  top: 17.5vw;
+  left: 15vw;
+  transform: translateX(-50%);
+  width: 11vw;
+  height: 4vw;
+}
+
+.twitter-button-japan {
+  position: relative;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: -2vw;
+  left: 15vw;
+  width: 20vw;
+  height: 7vw;
+  /* background-color: purple; */
+  cursor: pointer;
+}
+
+/* korea */
+.enter-button-korea {
+  top: 18vw;
+  left: 15vw;
+  transform: translateX(-50%);
+  width: 11vw;
+  height: 4vw;
+}
+
+.twitter-button-korea {
+  position: relative;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: -3vw;
+  left: 15vw;
+  width: 20vw;
+  height: 7vw;
+  /* background-color: purple; */
+  cursor: pointer;
+}
+
+/* poland */
+.enter-button-poland {
+  top: 15vw;
+  left: 15vw;
+  transform: translateX(-50%);
+  width: 11vw;
+  height: 4vw;
+}
+
+.twitter-button-poland {
+  position: relative;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: -6vw;
+  left: 15vw;
+  width: 20vw;
+  height: 7vw;
+  /* background-color: purple; */
+  cursor: pointer;
+}
+
+/* philippines */
+.enter-button-philippines {
+  top: 18vw;
+  left: 15vw;
+  transform: translateX(-50%);
+  width: 16vw;
+  height: 4vw;
+  opacity: 0;
+}
+
+.twitter-button-philippines {
+  display: flex;
+  position: relative;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: -6vw;
+  left: 15vw;
+  width: 23vw;
+  height: 9vw;
+  /* background-color: purple; */
+  cursor: pointer;
+}
+
+.twitter-button-philippines .profile {
+  flex-basis: 25%;
+  cursor: pointer;
+}
+
+/* japan */
+.enter-button-africa {
+  top: 17.5vw;
+  left: 15vw;
+  transform: translateX(-50%);
+  width: 11vw;
+  height: 4vw;
+}
+
+.twitter-button-africa {
+  position: relative;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  top: -2vw;
+  left: 15vw;
+  width: 20vw;
+  height: 7vw;
+  /* background-color: purple; */
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  top: 45px;
+  left: -55px;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  font-size: 2vw;
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+  .popup {
+    width: 90vw;
+    height: 60vw;
+  }
+
+  /* japan */
+  .twitter-button-japan {
+    top: -3vw;
+    left: 45vw;
+    width: 30vw;
+    height: 13vw;
+  }
+
+  .enter-button-japan {
+    top: 29.5vw;
+    left: 45vw;
+    width: 15vw;
+    height: 6vw;
+  }
+
+  /* korea */
+  .twitter-button-korea {
+    top: -4vw;
+    left: 45vw;
+    width: 30vw;
+    height: 13vw;
+  }
+
+  .enter-button-korea {
+    top: 29.5vw;
+    left: 45vw;
+    width: 15vw;
+    height: 6vw;
+  }
+
+  /* poland */
+  .twitter-button-poland {
+    top: -9vw;
+    left: 45vw;
+    width: 30vw;
+    height: 13vw;
+  }
+
+  .enter-button-poland {
+    top: 25.5vw;
+    left: 45vw;
+    width: 15vw;
+    height: 6vw;
+  }
+
+  /* philippines */
+  .enter-button-philippines {
+    top: 30vw;
+    left: 45vw;
+    width: 16vw;
+    height: 6vw;
+  }
+
+  .twitter-button-philippines {
+    top: -10vw;
+    left: 45vw;
+    width: 35vw;
+    height: 15vw;
+  }
+
+  /* japan */
+  .twitter-button-africa {
+    top: -3vw;
+    left: 45vw;
+    width: 30vw;
+    height: 13vw;
+  }
+
+  .enter-button-africa {
+    top: 29.5vw;
+    left: 45vw;
+    width: 15vw;
+    height: 6vw;
+  }
+
+  .close-btn {
+    font-size: 5vw;
+    top: -80px;
+    left: 155px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .popup {
+    width: 90vw;
+    height: 80vw;
+  }
+
+  /* .close-btn {
+
+  } */
+
+  /* japan */
+  .twitter-button-japan {
+    top: -3vw;
+    left: 45vw;
+    width: 40vw;
+    height: 17vw;
+  }
+
+  .enter-button-japan {
+    top: 39vw;
+    left: 45vw;
+    width: 20vw;
+    height: 8vw;
+  }
+
+  /* korea */
+  .twitter-button-korea {
+    top: -5vw;
+    left: 45vw;
+    width: 40vw;
+    height: 17vw;
+  }
+
+  .enter-button-korea {
+    top: 40vw;
+    left: 45vw;
+    width: 20vw;
+    height: 8vw;
+  }
+
+  /* poland */
+  .twitter-button-poland {
+    top: -12vw;
+    left: 45vw;
+    width: 40vw;
+    height: 17vw;
+  }
+
+  .enter-button-poland {
+    top: 33.5vw;
+    left: 45vw;
+    width: 15vw;
+    height: 6vw;
+  }
+
+  /* philippines */
+  .enter-button-philippines {
+    top: 38vw;
+    left: 45vw;
+    width: 15vw;
+    height: 6vw;
+  }
+
+  .twitter-button-philippines {
+    top: -11vw;
+    left: 45vw;
+    width: 48vw;
+    height: 20vw;
+  }
+
+  /* japan */
+  .twitter-button-africa {
+    top: -3vw;
+    left: 45vw;
+    width: 40vw;
+    height: 17vw;
+  }
+
+  .enter-button-africa {
+    top: 39vw;
+    left: 45vw;
+    width: 20vw;
+    height: 8vw;
+  }
+
+  .close-btn {
+    font-size: 5vw;
+    top: -55px;
+    left: 10px;
+  }
+}
+
+/* -------------------------------------------------------------- */
+
+.point {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.point .label {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  border-radius: 20px;
+  padding: 5px;
+  background: #00000077;
+  border: 1px solid #ffffff77;
+  color: #ffffff;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 100;
+  font-size: 14px;
+  cursor: pointer;
+  transform: scale(0, 0);
+  transition: transform 0.3s;
+}
+
+.point.visible .label {
+  transform: scale(1, 1);
+}
+
+.point .text {
+  position: absolute;
+  top: 30px;
+  left: -120px;
+  width: 200px;
+  padding: 20px;
+  border-radius: 4px;
+  background: #00000077;
+  border: 1px solid #ffffff77;
+  color: #ffffff;
+  line-height: 1.3em;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.point:hover .text {
+  opacity: 1;
+}
