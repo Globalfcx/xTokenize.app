@@ -46,10 +46,3 @@ https://xd.adobe.com/view/45963ae0-bcae-4b7c-9da2-c1db54405520-10c5/?fullscreen
 
 
 Virtual Model Deployment: https://spinning-planet-eight.vercel.app/
-
-Nagivation on the site:
-
-You can zoom in/zoom out
-You can select the planet by double click
-You can turn the planet 3D model by simple click, hold and move the mouse
-You can go back by clicking (double click) the background
